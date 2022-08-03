@@ -256,16 +256,15 @@ function processFootnote(item, output){
   var footnoteParagraphs = footnoteContents.getParagraphs();
   var loopOutput = [];
   for (var i=0; i < footnoteParagraphs.length; i++) {
-    // var bar = footnoteParagraphs[i];
-    // var x = bar.getText();
-    loopOutput.push(processFootnoteItem(footnoteParagraphs[i], output));
+    loopOutput.push(processFootnoteItem(footnoteParagraphs[i]));
   }
   // <fn> tags are a custom tag for the Drupal footnotes module
   output.push('<fn>' + loopOutput.join('') + '</fn>');
 }
 
-function processFootnoteItem(footnoteItem, output){
+function processFootnoteItem(footnoteItem){
   // Process the actual text of the footnote and preserves only bold and italic tags.
+  output = [];
     if (footnoteItem.getType() == DocumentApp.ElementType.PARAGRAPH) {
      
 
