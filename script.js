@@ -6,12 +6,6 @@ function onOpen(e) {
   DocumentApp.getUi().createAddonMenu().addItem('Convert', 'ConvertGoogleDocToCleanHtml').addToUi();
 }
 
-// function convertFootNotes() {
-//   // var doc = DocumentApp.getActiveDocument();
-//   // performConversion(doc);
-//   ConvertGoogleDocToCleanHtml()
-// }
-
 function ConvertGoogleDocToCleanHtml() {
   var body = DocumentApp.getActiveDocument().getBody();
   var numChildren = body.getNumChildren();
